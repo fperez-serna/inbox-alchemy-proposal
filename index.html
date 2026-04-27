@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visual Identity Services — Inbox Alchemy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --black: #0C0C0C;
+  --white: #F8F7F4;
+  --mid: #888580;
+  --line: #D8D6D0;
+  --light-bg: #F0EEE9;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--white);
+  color: var(--black);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── LAYOUT ── */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 600px) {
+  .container { padding: 0 24px; }
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky;
+  top: 0;
+  background: var(--black);
+  z-index: 100;
+  padding: 16px 0;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.nav-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.nav-meta {
+  font-size: 11px;
+  color: #555;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--white); }
+
+@media (max-width: 600px) {
+  .nav-inner { padding: 0 24px; }
+  .nav-links { display: none; }
+}
+
+/* ── COVER ── */
+.cover {
+  background: var(--black);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 80px 0 60px;
+}
+
+.cover-eyebrow {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.cover-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(52px, 10vw, 110px);
+  font-weight: 900;
+  line-height: 0.88;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin-bottom: 40px;
+}
+
+.cover-headline em {
+  font-style: italic;
+  font-weight: 400;
+  color: #444;
+}
+
+.cover-rule {
+  width: 100%;
+  height: 1px;
+  background: #1e1e1e;
+  margin: 32px 0;
+}
+
+.cover-desc {
+  font-size: 16px;
+  font-weight: 300;
+  color: #666;
+  line-height: 1.8;
+  max-width: 520px;
+}
+
+.cover-bottom {
+  margin-top: 80px;
+  padding-top: 32px;
+  border-top: 1px solid #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.cover-meta-block {}
+
+.cover-meta-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.cover-meta-value {
+  font-size: 14px;
+  color: #888;
+  line-height: 1.6;
+}
+
+.cover-big-num {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(60px, 12vw, 120px);
+  font-weight: 900;
+  color: #1a1a1a;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+/* ── SECTIONS ── */
+section {
+  padding: 100px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+section:last-of-type { border-bottom: none; }
+
+.section-header {
+  margin-bottom: 60px;
+}
+
+.eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 6vw, 72px);
+  font-weight: 900;
+  line-height: 0.92;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--black);
+  margin-bottom: 24px;
+}
+
+.section-title em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.section-intro {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--mid);
+  line-height: 1.9;
+  max-width: 600px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* ── PACKAGES ── */
+.pkg-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 3px solid var(--black);
+  margin-top: 40px;
+}
+
+@media (max-width: 700px) {
+  .pkg-grid {
+    grid-template-columns: 1fr;
+  }
+  .pkg-col + .pkg-col {
+    border-top: 2px solid var(--black);
+    border-left: none !important;
+  }
+}
+
+.pkg-col {
+  padding: 32px 32px 32px 0;
+}
+
+.pkg-col + .pkg-col {
+  border-left: 1px solid var(--line);
+  padding-left: 32px;
+  padding-right: 0;
+}
+
+.pkg-col-num {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 8px;
+}
+
+.pkg-col-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  color: var(--black);
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.pkg-col-name em {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.pkg-phase-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin: 20px 0 8px;
+}
+
+.pkg-item {
+  font-size: 13px;
+  font-weight: 300;
+  color: #555;
+  line-height: 1.5;
+  padding: 9px 0;
+  border-bottom: 1px solid #EDEBE7;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.pkg-item::before {
+  content: '—';
+  font-size: 10px;
+  color: var(--line);
+  flex-shrink: 0;
+}
+
+.pkg-item.extra {
+  color: var(--black);
+  font-weight: 500;
+}
+
+.pkg-item.extra::before {
+  content: '+';
+  color: var(--black);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* Deliverables */
+.deliverables {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.del-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 10px;
+}
+
+.del-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.del-tag {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border: 1px solid var(--line);
+  color: #666;
+}
+
+/* Revisions */
+.revisions {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.rev-item {
+  font-size: 12px;
+  font-weight: 300;
+  color: #888;
+  line-height: 1.8;
+}
+
+/* ── QUESTIONS ── */
+.q-block {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 0;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+
+.q-block:first-child { border-top: 1px solid var(--line); }
+
+.q-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--line);
+  line-height: 1;
+  padding-top: 2px;
+}
+
+.q-question {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--black);
+  margin-bottom: 8px;
+}
+
+.q-why {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--mid);
+  line-height: 1.8;
+}
+
+.q-why strong {
+  font-weight: 600;
+  color: var(--black);
+}
+
+/* ── NEXT STEPS ── */
+.step-block {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 0;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+
+.step-block:first-child { border-top: 1px solid var(--line); }
+
+.step-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--line);
+  line-height: 1;
+}
+
+.step-text {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.6;
+  padding-top: 6px;
+}
+
+.step-text.final {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 14px;
+}
+
+/* ── SIGNATURE ── */
+.sig-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 600px) {
+  .sig-grid { grid-template-columns: 1fr; }
+  .q-block, .step-block { grid-template-columns: 52px 1fr; }
+  .q-num, .step-num { font-size: 28px; }
+}
+
+.sig-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 6px;
+}
+
+.sig-value {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.6;
+}
+
+.sig-note {
+  font-size: 12px;
+  color: var(--mid);
+  margin-top: 4px;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--black);
+  padding: 32px 0;
+}
+
+.footer-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-name {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #444;
+}
+
+.footer-note {
+  font-size: 10px;
+  color: #333;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
+  .nav-inner { padding: 0 24px; }
+  .cover { padding: 60px 0 40px; }
+  section { padding: 72px 0; }
+  .pkg-col { padding: 24px 0; }
+  .pkg-col + .pkg-col { padding-left: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">Visual Identity Services</span>
+    <ul class="nav-links">
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#questions">Questions</a></li>
+      <li><a href="#next-steps">Next Steps</a></li>
+    </ul>
+    <span class="nav-meta">Confidential &nbsp;·&nbsp; 2026</span>
+  </div>
+</nav>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="container">
+    <div class="cover-eyebrow">Internal Proposal &nbsp;·&nbsp; Inbox Alchemy &nbsp;·&nbsp; Not for client distribution</div>
+    <div class="cover-headline">
+      Visual<br>
+      <em>Identity</em><br>
+      Services
+    </div>
+    <div class="cover-rule"></div>
+    <div class="cover-desc">
+      Two service packages for podcast client image design — developed for established, professional podcast clients who require a stronger and more intentional on-screen visual presence.
+    </div>
+    <div class="cover-bottom">
+      <div>
+        <div class="cover-meta-block">
+          <div class="cover-meta-label">Prepared by</div>
+          <div class="cover-meta-value">Fernanda Serna<br>Creative Director &amp; Visual Identity Consultant</div>
+        </div>
+        <div class="cover-meta-block" style="margin-top: 24px;">
+          <div class="cover-meta-label">For</div>
+          <div class="cover-meta-value">Inbox Alchemy &nbsp;·&nbsp; Internal review only</div>
+        </div>
+      </div>
+      <div class="cover-big-num">01</div>
+    </div>
+  </div>
+</div>
+
+<!-- PACKAGES -->
+<section id="packages">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">What we're offering</div>
+      <div class="section-title">The Two<br><em>Packages</em></div>
+      <div class="section-intro">
+        Both packages are designed for established, professional podcast clients. Package 02 is a full-service extension of Package 01 — the only addition is Phase 3, where I source and curate every item so the client executes without friction. The product budget is always separate from my service fee.
+      </div>
+    </div>
+
+    <div class="pkg-grid">
+
+      <!-- PKG 01 -->
+      <div class="pkg-col">
+        <div class="pkg-col-num">Package 01</div>
+        <div class="pkg-col-name">Analysis +<br><em>Moodboard</em></div>
+
+        <div class="pkg-phase-label">Phase 1 — Visual Audit</div>
+        <div class="pkg-item">Full visual audit of existing recordings</div>
+        <div class="pkg-item">Wardrobe analysis per host</div>
+        <div class="pkg-item">Set &amp; scenography review</div>
+        <div class="pkg-item">Lighting tone assessment</div>
+        <div class="pkg-item">Accessories &amp; props evaluation</div>
+        <div class="pkg-item">Competitor benchmark (3–5 shows)</div>
+
+        <div class="pkg-phase-label">Phase 2 — Creative Direction</div>
+        <div class="pkg-item">Visual concept definition</div>
+        <div class="pkg-item">On-screen color palette</div>
+        <div class="pkg-item">Moodboard — tone, style, references</div>
+        <div class="pkg-item">Per-host styling guide</div>
+        <div class="pkg-item">Set composition direction</div>
+        <div class="pkg-item">Accessories &amp; detail direction</div>
+        <div class="pkg-item">Priority action list</div>
+
+        <div class="deliverables">
+          <div class="del-label">Deliverables</div>
+          <div class="del-tags">
+            <span class="del-tag">Audit Report</span>
+            <span class="del-tag">Benchmark</span>
+            <span class="del-tag">Moodboard</span>
+            <span class="del-tag">Color Palette</span>
+            <span class="del-tag">Style Guide</span>
+            <span class="del-tag">Set Direction</span>
+            <span class="del-tag">Action List</span>
+          </div>
+        </div>
+
+        <div class="revisions">
+          <div class="del-label">Revisions</div>
+          <div class="rev-item">1 round on moodboard direction</div>
+          <div class="rev-item">1 round on per-host styling guide</div>
+          <div class="rev-item">Submitted within 5 business days of delivery</div>
+          <div class="rev-item">Additional rounds available at extra cost</div>
+        </div>
+      </div>
+
+      <!-- PKG 02 -->
+      <div class="pkg-col">
+        <div class="pkg-col-num">Package 02</div>
+        <div class="pkg-col-name">Analysis + Moodboard<br><em>+ Shopping</em></div>
+
+        <div class="pkg-phase-label">Phase 1 — Visual Audit</div>
+        <div class="pkg-item">Full visual audit of existing recordings</div>
+        <div class="pkg-item">Wardrobe analysis per host</div>
+        <div class="pkg-item">Set &amp; scenography review</div>
+        <div class="pkg-item">Lighting tone assessment</div>
+        <div class="pkg-item">Accessories &amp; props evaluation</div>
+        <div class="pkg-item">Competitor benchmark (3–5 shows)</div>
+
+        <div class="pkg-phase-label">Phase 2 — Creative Direction</div>
+        <div class="pkg-item">Visual concept definition</div>
+        <div class="pkg-item">On-screen color palette</div>
+        <div class="pkg-item">Moodboard — tone, style, references</div>
+        <div class="pkg-item">Per-host styling guide</div>
+        <div class="pkg-item">Set composition direction</div>
+        <div class="pkg-item">Accessories &amp; detail direction</div>
+        <div class="pkg-item">Priority action list</div>
+
+        <div class="pkg-phase-label">Phase 3 — Shopping &amp; Sourcing</div>
+        <div class="pkg-item extra">Curated shopping list per category</div>
+        <div class="pkg-item extra">Specific products, links &amp; current prices</div>
+        <div class="pkg-item extra">3 budget tiers — essential / recommended / premium</div>
+        <div class="pkg-item extra">Local + online sourcing options</div>
+        <div class="pkg-item extra">Full budget breakdown by category</div>
+        <div class="pkg-item extra">Optional: physical purchasing on client's behalf</div>
+
+        <div class="deliverables">
+          <div class="del-label">Deliverables</div>
+          <div class="del-tags">
+            <span class="del-tag">All of Pkg. 01</span>
+            <span class="del-tag">Shopping List</span>
+            <span class="del-tag">Product Links</span>
+            <span class="del-tag">3-Tier Budget</span>
+            <span class="del-tag">Cost Summary</span>
+            <span class="del-tag">Local Sourcing</span>
+          </div>
+        </div>
+
+        <div class="revisions">
+          <div class="del-label">Revisions</div>
+          <div class="rev-item">1 round on moodboard direction</div>
+          <div class="rev-item">1 round on per-host styling guide</div>
+          <div class="rev-item">1 round on the shopping list</div>
+          <div class="rev-item">Submitted within 5 business days of delivery</div>
+          <div class="rev-item">Additional rounds available at extra cost</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- QUESTIONS -->
+<section id="questions">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Before we pitch anything</div>
+      <div class="section-title">Questions<br><em>to Align On</em></div>
+      <div class="section-intro">
+        These six questions need clear answers before these packages are shown to a single client. They affect how I scope my work, how I price my time, and how this collaboration is structured long term.
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num">01</div>
+      <div>
+        <div class="q-question">Do we want to show clients a fixed delivery timeline, or quote it per project?</div>
+        <div class="q-why">A fixed timeline makes the packages easier to sell and sets clear expectations. Per-project gives us flexibility but requires more back-and-forth. <strong>Your call — I adapt either way.</strong></div>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num">02</div>
+      <div>
+        <div class="q-question">What is my cut per package sold, and how does payment flow — client pays you or me directly?</div>
+        <div class="q-why">I need to know my actual number before I can calibrate how much time and effort is reasonable per package. <strong>This needs to be in writing before we start.</strong></div>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num">03</div>
+      <div>
+        <div class="q-question">If a client approaches me for work outside the podcast scope — like an event, a launch, or a one-off project — does that go through Inbox Alchemy, or can I take it independently?</div>
+        <div class="q-why">This isn't about competing — it's about knowing where the boundaries are so we both operate with clarity. <strong>Let's define this upfront so there are no awkward conversations later.</strong></div>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num">04</div>
+      <div>
+        <div class="q-question">Am I client-facing, or do you handle all communication and I just deliver the work?</div>
+        <div class="q-why">Client-facing means meetings, revision calls, expectation management — real billable hours. <strong>If you handle communication, the scope and pricing look different.</strong></div>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num">05</div>
+      <div>
+        <div class="q-question">Who sets the final price the client pays — you or me? Do I have visibility on that number?</div>
+        <div class="q-why">You're welcome to mark up my fee — that's your business. <strong>I just need transparency on the final number so I can calibrate quality and the relationship stays healthy.</strong></div>
+      </div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-num">06</div>
+      <div>
+        <div class="q-question">When I shop on behalf of a client in Package 02, who holds and approves the product budget?</div>
+        <div class="q-why">This money cannot pass through me informally. It needs a documented flow — client approval in writing before any purchase. <strong>Let's agree on a process so neither of us is exposed.</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<section id="next-steps">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">What happens next</div>
+      <div class="section-title">Suggested<br><em>Next Steps</em></div>
+      <div class="section-intro">
+        Once we're aligned on the six questions above, moving to client launch is straightforward. The packages are ready. The structure is solid. We just need to agree on the business layer first.
+      </div>
+    </div>
+
+    <div class="step-block">
+      <div class="step-num">01</div>
+      <div class="step-text">Meet to align on the six questions in this document</div>
+    </div>
+    <div class="step-block">
+      <div class="step-num">02</div>
+      <div class="step-text">Define revenue split and payment flow in a simple written agreement</div>
+    </div>
+    <div class="step-block">
+      <div class="step-num">03</div>
+      <div class="step-text">Set timeline policy — fixed per package or quoted per project</div>
+    </div>
+    <div class="step-block">
+      <div class="step-num">04</div>
+      <div class="step-text">Finalize the client-facing package presentation once aligned</div>
+    </div>
+    <div class="step-block">
+      <div class="step-num">05</div>
+      <div class="step-text">Identify the first client to pilot Package 01</div>
+    </div>
+    <div class="step-block">
+      <div class="step-num" style="color: var(--black);">→</div>
+      <div class="step-text final">Launch client-facing packages with confidence</div>
+    </div>
+
+    <div class="sig-grid">
+      <div>
+        <div class="sig-label">Prepared by</div>
+        <div class="sig-value">Fernanda Serna</div>
+        <div class="sig-note">Creative Director &amp; Visual Identity Consultant &nbsp;·&nbsp; 2026</div>
+      </div>
+      <div>
+        <div class="sig-label">For internal review</div>
+        <div class="sig-value">Inbox Alchemy</div>
+        <div class="sig-note">Not for client distribution &nbsp;·&nbsp; Confidential</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-name">Fernanda Serna &nbsp;·&nbsp; Visual Identity Services</span>
+    <span class="footer-note">Internal &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
